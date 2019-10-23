@@ -1,5 +1,7 @@
 #!/bin/sh
 
+apt install mailutils
+
 echo '#!/bin/bash' > /opt/shell-login.sh
 echo 'echo "Login auf $(hostname) am $(date +%d.%m.%Y) um $(date +%H:%M) Uhr"' >> /opt/shell-login.sh
 echo 'echo "Benutzer: $USER"' >> /opt/shell-login.sh
