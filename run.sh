@@ -21,3 +21,9 @@ sh ./InstallGo.sh
 
 echo "Installing Caddyserver..."
 sh ./caddy.sh
+
+echo "#################################"
+echo " NOTICE:                         "
+echo " For everything to work well,    "
+echo " you should reboot you server.   "
+echo "#################################"
