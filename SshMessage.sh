@@ -6,4 +6,5 @@ echo 'echo "Benutzer: $USER"' >> /opt/shell-login.sh
 echo 'echo' >> /opt/shell-login.sh
  
 chmod 755 /opt/shell-login.sh
-echo '/opt/shell-login.sh | mailx -s "SSH Login auf deinem Server" joshy1@live.de' >> /etc/profile
+read -p "Mail address: " mail
+echo '/opt/shell-login.sh | mailx -s "SSH Login auf deinem Server" $mail' >> /etc/profile
