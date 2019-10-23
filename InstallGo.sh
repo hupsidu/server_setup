@@ -1,19 +1,19 @@
 #!/bin/sh
 
-cd ~
-curl -O https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz
+cd
+wget https://dl.google.com/go/go1.13.1.linux-amd64.tar.gz
 
-tar xvf go1.6.linux-amd64.tar.gz
-chown -R root:root ./go
-rm -rf /usr/local/go/
-mv go /usr/local
+rm -rf /usr/local/go
 
-export GOPATH=$HOME/work
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+sudo tar -xvf go1.13.1.linux-amd64.tar.gz
+sudo mv go /usr/local
 
-export GOROOT=$HOME/go
-export GOPATH=$HOME/work
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/Projects/Caddy
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-cd 
-source ~/.profile
+go version
+
+echo "export GOROOT=/usr/local/go" >> ~/.profile
+echo "export GOPATH=$HOME/Projects/Caddy" >> ~/.profile
+echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH" >> ~/.profile
