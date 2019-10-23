@@ -11,4 +11,4 @@ passwd servermgmt
 echo 'servermgmt ALL=(ALL) ALL' >> /etc/sudoers
 echo "PermitRootLogin no" >> /etc/ssh/sshd_config
 
-/etc/init.d/sshd restart
+service ssh restart
